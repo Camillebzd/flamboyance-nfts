@@ -1,10 +1,10 @@
 import { ethers } from 'ethers';
-import contractABI from '@/abi/TossACoin.json';
+import contractABI from '@/abi/Flamboyant.json';
 import { Notify } from 'notiflix';
 
-const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TOSS_A_COIN_ADDRESS || "";
+const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_FLAMBOYANT_ADDRESS || "";
 
-// function to create a contract ethers.js of tossACoin
+// function to create a contract ethers.js of flamboyant
 export async function createContract(walletAddress: string) {
   if (walletAddress.length < 1)
     return undefined;
@@ -18,16 +18,5 @@ export async function createContract(walletAddress: string) {
     console.log(e);
     Notify.failure("An error occured");
     return undefined;
-  }
-}
-
-export function roundBigIntString(number: string, roundedDecimal: number) {
-  try {
-    const balanceFloat = parseFloat(number);
-    const roundedBalanceFloat = parseFloat(balanceFloat.toFixed(roundedDecimal));
-    return roundedBalanceFloat.toString();
-  } catch (e) {
-    console.log(e);
-    return "0.000";
   }
 }

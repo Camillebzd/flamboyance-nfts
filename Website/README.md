@@ -7,7 +7,7 @@ Contain the [Next.js](https://nextjs.org/) website created with [`create-next-ap
 If you want to run it locally, create a `.env.local` file (Sepolia network example):
 
 ```shell
-NEXT_PUBLIC_TOSS_A_COIN_ADDRESS=<your-contract-address-on-testnet>
+NEXT_PUBLIC_FLAMBOYANT_ADDRESS=<your-contract-address-on-testnet>
 NEXT_PUBLIC_GOOD_NETWORK_ID="0xaa36a7"
 ```
 

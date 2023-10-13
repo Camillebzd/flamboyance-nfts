@@ -2,9 +2,8 @@
 import ConnectButton from '@/components/ConnectButton'
 import styles from './page.module.css'
 import { useEffect, useState } from "react";
-import TotalCollected from '@/components/TotalCollected';
-import Donator from '@/components/Donator';
 import useWindowDimensions from '@/utils/customHooks';
+import Mint from '@/components/Mint';
 
 export default function Home() {
   const [address, setAddress] = useState("");
@@ -80,12 +79,9 @@ export default function Home() {
 
   const showBody = () => {
    if (address.length > 0 && isOnGoodNetwork) {
-    // return (
-    //   <>
-    //     <TotalCollected address={address} />
-    //     <Donator address={address} />
-    //   </>
-    // );
+    return (
+      <Mint address={address}/>
+    );
    } else {
     return (
       <div>
