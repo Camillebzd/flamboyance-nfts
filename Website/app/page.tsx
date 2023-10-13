@@ -11,6 +11,14 @@ export default function Home() {
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
+    // create canvas here bc if not 
+    const main = document.getElementById('mainContainer');
+    let canvas = document.createElement('canvas');
+    main?.appendChild(canvas);
+    canvas.className = styles.myCanvas;
+    canvas.setAttribute('width', width.toString());
+    canvas.setAttribute('height', height.toString());
+    
     const maxLightningPaths = 100;
     const maxLightningThickness = 2;
     const startingDistance = 30;
@@ -58,7 +66,7 @@ export default function Home() {
     
     let timerFadeOut: NodeJS.Timeout;
     let timerLightning: NodeJS.Timeout;
-    let canvas = document.getElementById("storm") as HTMLCanvasElement;
+    // let canvas = document.getElementById("storm") as HTMLCanvasElement;
     function createCanvasAndLightning() {
         const ctx = canvas.getContext("2d");
         if (!ctx)
@@ -72,6 +80,7 @@ export default function Home() {
     }
     timerLightning = setInterval(createCanvasAndLightning, 2000);
     return () => {
+      canvas.remove();
       clearTimeout(timerFadeOut);
       clearTimeout(timerLightning);
     };
@@ -92,9 +101,9 @@ export default function Home() {
   }
 
   return (
-    <>
-      <canvas className={styles.myCanvas} id='storm' width={width} height={height}>
-      </canvas>
+    <div id='mainContainer'>
+      {/* <canvas className={styles.myCanvas} id='storm' width={width} height={height}>
+      </canvas> */}
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
@@ -105,6 +114,6 @@ export default function Home() {
 
         {showBody()}
       </main>
-    </>
+    </div>
   )
 }
