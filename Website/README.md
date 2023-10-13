@@ -1,4 +1,4 @@
-# Toss a coin
+# Flamboyant NFTs
 
 ## Details
 
@@ -22,4 +22,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployed version
 
-If you want to see my last version deployed on Vercel: https://toss-a-coin-sepolia.vercel.app/
+If you want to see my last version deployed on Vercel: https://flamboyant-nfts-sepolia.vercel.app/
