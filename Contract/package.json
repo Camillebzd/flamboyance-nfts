@@ -1,0 +1,16 @@
+{
+  "name": "dynamic-nft",
+  "version": "1.0.0",
+  "description": "tests of dynamic nfts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CamilleBzd",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "hardhat": "^2.18.0"
+  }
+}
